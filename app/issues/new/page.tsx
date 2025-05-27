@@ -19,7 +19,7 @@ const NewIssuePage = () => {
 		register,
 		control,
 		handleSubmit,
-		formState: { errors },
+		formState: { errors, isSubmitting },
 	} = useForm<IssueForm>({
 		resolver: zodResolver(createIssueSchema),
 	})
@@ -60,7 +60,7 @@ const NewIssuePage = () => {
 
 				<ErrorMessage>{errors.description?.message}</ErrorMessage>
 
-				<Button>Submit New Issue</Button>
+				<Button loading={isSubmitting}>Submit New Issue</Button>
 			</form>
 		</div>
 	)
