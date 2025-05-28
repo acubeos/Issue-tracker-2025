@@ -3,7 +3,7 @@ import Link from "next/link"
 import { prisma } from "@/prisma/client"
 import IssueStatusBadge from "../components/IssueStatusBadge"
 const IssuesPage = async () => {
-	const issues = await prisma.issues.findMany()
+	const issues = await prisma.issue.findMany()
 
 	return (
 		<div>
