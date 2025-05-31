@@ -1,7 +1,6 @@
 import { Box, Flex, Skeleton } from "@radix-ui/themes"
-import React from "react"
 
-const LoadingNewIssue = () => {
+const EditLoadingSkeleton = () => {
 	return (
 		<Box className='max-w-xl'>
 			<Flex direction='column' gap='3'>
@@ -12,4 +11,4 @@ const LoadingNewIssue = () => {
 	)
 }
 
-export default LoadingNewIssue
+export default EditLoadingSkeleton
