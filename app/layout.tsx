@@ -5,6 +5,7 @@ import "@radix-ui/themes/styles.css"
 import "./radix-theme.css"
 import "./globals.css"
 import NavBar from "./NavBar"
+import AuthProvider from "./auth/Provider"
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -28,16 +29,18 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
-				<Theme accentColor='purple'>
-					<NavBar />
-					<Container>
-						<main className='p-5'> {children}</main>
-					</Container>
-				</Theme>
-			</body>
+			<AuthProvider>
+				<body
+					className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				>
+					<Theme accentColor='purple'>
+						<NavBar />
+						<Container>
+							<main className='p-5'> {children}</main>
+						</Container>
+					</Theme>
+				</body>
+			</AuthProvider>
 		</html>
 	)
 }
