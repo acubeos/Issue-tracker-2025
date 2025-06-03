@@ -1,4 +1,5 @@
 "use client"
+
 import {
 	Avatar,
 	Box,
@@ -12,7 +13,6 @@ import classNames from "classnames"
 import { useSession } from "next-auth/react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import React from "react"
 import { AiFillBug } from "react-icons/ai"
 
 const NavBar = () => {
@@ -54,7 +54,7 @@ const AuthStatus = () => {
 						size='2'
 						radius='full'
 						className='cursor-pointer'
-						referrerPolicy='no-referrer'
+						// referrerPolicy='no-referrer'
 					/>
 				</DropdownMenu.Trigger>
 				<DropdownMenu.Content>
