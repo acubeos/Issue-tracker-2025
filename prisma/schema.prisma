@@ -18,7 +18,7 @@ model Issue {
   id               Int      @id @default(autoincrement())
   title            String
   description      String   @db.Text
-  status           Status   @default(open)
+  status           Status   @default(OPEN)
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
   assignedToUserId String?
@@ -26,9 +26,9 @@ model Issue {
 }
 
 enum Status {
-  open
-  closed
-  in_progress
+  OPEN
+  CLOSED
+  IN_PROGRESS
 }
 
 model User {
