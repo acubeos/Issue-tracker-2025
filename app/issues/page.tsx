@@ -49,6 +49,6 @@ const IssuesPage = async (props: Props) => {
 	)
 }
 
-export const dynamic = "force-dynamic"
+// export const dynamic = "force-dynamic"
 
 export default IssuesPage

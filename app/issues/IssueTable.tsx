@@ -6,12 +6,6 @@ import { IssueStatusBadge } from "../components"
 import NextLink from "next/link"
 import { Issue, Status } from "../generated/prisma"
 
-// type SearchParams = Promise<{
-// 	status: Status
-// 	orderBy: keyof Issue
-// 	page: string
-// }>
-
 export interface IssueQuery {
 	status: Status
 	orderBy: keyof Issue
