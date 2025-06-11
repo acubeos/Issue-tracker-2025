@@ -3,12 +3,13 @@ import { Status } from "./generated/prisma"
 import Link from "next/link"
 
 interface Props {
-	open: number
-	closed: number
-	inProgress: number
+	// open: number
+	// closed: number
+	// inProgress: number
+	status: { open: number; closed: number; inProgress: number }
 }
 
-const IssueSummary = ({ open, closed, inProgress }: Props) => {
+const IssueSummary = ({ status: { open, closed, inProgress } }: Props) => {
 	const containers: { label: string; value: number; status: Status }[] = [
 		{ label: "Open Issues", value: open, status: "OPEN" },
 		{ label: "In Progress Issues", value: inProgress, status: "IN_PROGRESS" },
