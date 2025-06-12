@@ -28,8 +28,7 @@ const IssueChart = ({ status: { open, closed, inProgress } }: Props) => {
 					<Tooltip />
 					<Bar
 						dataKey='value'
-						barSize={60}
-						fill='#8884d8'
+						barSize={50}
 						style={{ fill: "var(--accent-9)" }}
 					/>
 				</BarChart>

@@ -40,4 +40,34 @@ const IssueDetailPage = async ({ params }: Props) => {
 	)
 }
 
+export async function generateMetadata({ params }: Props) {
+	const issue = await prisma.issue.findUnique({
+		where: {
+			id: parseInt(params.id),
+		},
+	})
+
+	if (!issue) return {}
+
+	return {
+		title: `Issue #${issue.id} - ${issue.title}`,
+		description: issue.description,
+		keywords: "issue tracker, project management, software development",
+		authors: [{ name: "Aziz Akande", url: "https://linkedin.com/in/acubeos" }],
+		openGraph: {
+			title: `Issue #${issue.id} - ${issue.title}`,
+			description: issue.description,
+			siteName: "Issue Tracker",
+			type: "website",
+			locale: "en_NG",
+		},
+		twitter: {
+			title: `Issue #${issue.id} - ${issue.title}`,
+			description: issue.description,
+			site: "@Abiola_bg",
+			creator: "@Abiola_bg",
+		},
+	}
+}
+
 export default IssueDetailPage
